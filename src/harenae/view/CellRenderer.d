@@ -215,8 +215,8 @@ private:
         this.pipeline = new GraphicsPipeline(context)
             .withVertexInputState!Vertex(VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST)
             .withDSLayouts(descriptors.getAllLayouts())
-            .withVertexShader(context.shaderCompiler().getModule("cell.vert"))
-            .withFragmentShader(context.shaderCompiler().getModule("cell.frag"))
+            .withVertexShader(context.shaders().getModule("cell.vert"))
+            .withFragmentShader(context.shaders().getModule("cell.frag"))
             //.withStdColorBlendState()
             .build();
     }

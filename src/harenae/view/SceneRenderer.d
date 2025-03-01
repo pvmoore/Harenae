@@ -101,9 +101,9 @@ private:
             //| ImGuiWindowFlags_NoMove;
             ;
 
+
         igPushFont(context.vk.getImguiFont(0));
         igPushStyleVar_Float(ImGuiStyleVar_FrameBorderSize, 1);
-
 
         if(igBegin("Harenae", null, windowFlags)) {
             uiTabInfo();
@@ -147,7 +147,7 @@ private:
                 row(key, "%.2f".format(value));
             }
 
-            if(igBeginTableEx("infoTable", 0, numCols, flags, outerSize, innerWidth)) {
+            if(igBeginTable("infoTable", numCols, flags, outerSize, innerWidth)) {
 
                 rowF("FPS", context.vk.getFPSSnapshot());
 

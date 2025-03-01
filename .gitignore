@@ -12,5 +12,6 @@ bin/
 *.bmp
 *.lnk
 *.pdb
+*.spv
 
 imgui.ini

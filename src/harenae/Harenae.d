@@ -35,6 +35,9 @@ public:
         VulkanProperties vprops = {
             appName: "Crepitus Harenae",
             apiVersion: vulkanVersion(1,1,0),
+            shaderSrcDirectories: ["src/harenae/shaders/", "/pvmoore/d/libs/vulkan/shaders/"],
+            shaderDestDirectory:  "resources/shaders/",
+            shaderSpirvVersion:   "1.3",
             imgui: {
                 enabled: true,
                 configFlags:
@@ -165,8 +168,7 @@ private:
 
         context.withRenderPass(renderPass)
                .withFonts("resources/fonts/")
-               .withImages("resources/images")
-               .withShaderCompiler("src/harenae/shaders/", "resources/shaders/");
+               .withImages("resources/images");
 
         this.log("%s", context);
     }
