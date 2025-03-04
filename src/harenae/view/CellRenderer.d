@@ -138,9 +138,21 @@ private:
     }
     void createBuffers() {
         this.cellDataBuffer = new GPUData!uint(context, "cell_data".as!BufID, true, numCells)
+            .withAccessAndStageMasks(AccessAndStageMasks(
+                    VkAccessFlagBits.VK_ACCESS_SHADER_READ_BIT,
+                    VkAccessFlagBits.VK_ACCESS_SHADER_READ_BIT,
+                    VkPipelineStageFlagBits.VK_PIPELINE_STAGE_VERTEX_SHADER_BIT,
+                    VkPipelineStageFlagBits.VK_PIPELINE_STAGE_VERTEX_SHADER_BIT
+                ))
             .initialise();
 
         this.cellColourBuffer = new GPUData!float4(context, "cell_data".as!BufID, true, 256*float4.sizeof)
+            .withAccessAndStageMasks(AccessAndStageMasks(
+                    VkAccessFlagBits.VK_ACCESS_SHADER_READ_BIT,
+                    VkAccessFlagBits.VK_ACCESS_SHADER_READ_BIT,
+                    VkPipelineStageFlagBits.VK_PIPELINE_STAGE_VERTEX_SHADER_BIT,
+                    VkPipelineStageFlagBits.VK_PIPELINE_STAGE_VERTEX_SHADER_BIT
+                ))
             .initialise();  
 
         cellDataBuffer.memset(0, cellDataBuffer.count);

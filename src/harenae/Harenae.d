@@ -55,6 +55,8 @@ public:
             }
         };
 
+        vprops.enableGpuValidation = false;
+
 		this.vk = new Vulkan(this, wprops, vprops);
 
         // Will call deviceReady
