@@ -9,6 +9,9 @@ import std.format               : format;
 import std.string               : fromStringz, strip, toStringz;
 
 import common;
+import common.utils;
+import common.io;
+
 import maths;
 import logging;
 import vulkan;

@@ -28,7 +28,7 @@ public:
             fullscreen:   false,
             vsync:        false,
             title:        TITLE,
-            icon:         "/pvmoore/_assets/icons/3dshapes.png",
+            icon:         "resources/images/bird-logo.png",
             showWindow:   false,
             frameBuffers: NUM_FRAME_BUFFERS
         };
@@ -45,8 +45,8 @@ public:
                     ImGuiConfigFlags_DockingEnable |
                     ImGuiConfigFlags_ViewportsEnable,
                 fontPaths: [
-                    "/pvmoore/_assets/fonts/Roboto-Regular.ttf",
-                    "/pvmoore/_assets/fonts/RobotoCondensed-Regular.ttf"
+                    "resources/fonts/Roboto-Regular.ttf",
+                    "resources/fonts/RobotoCondensed-Regular.ttf"
                 ],
                 fontSizes: [
                     22,
@@ -122,7 +122,7 @@ public:
         // Inside render pass: initialLayout = VImageLayout.UNDEFINED
         b.beginRenderPass(
             context.renderPass,
-            res.frameBuffer,
+            frame.frameBuffer,
             toVkRect2D(0,0, vk.windowSize.toVkExtent2D),
             [ clearColour(0.5f,0,0,1) ],
             VK_SUBPASS_CONTENTS_INLINE
