@@ -34,7 +34,7 @@ public:
         };
         VulkanProperties vprops = {
             appName: "Crepitus Harenae",
-            apiVersion: vulkanVersion(1,1,0),
+            apiVersion: VK_API_VERSION_1_1,
             shaderSrcDirectories: ["src/harenae/shaders/", "/pvmoore/d/libs/vulkan/shaders/"],
             shaderDestDirectory:  "resources/shaders/",
             shaderSpirvVersion:   "1.3",

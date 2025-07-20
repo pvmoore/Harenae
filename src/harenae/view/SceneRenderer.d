@@ -102,7 +102,7 @@ private:
             ;
 
 
-        igPushFont(context.vk.getImguiFont(0));
+        igPushFont(context.vk.getImguiFont(0), 0);
         igPushStyleVar_Float(ImGuiStyleVar_FrameBorderSize, 1);
 
         if(igBegin("Harenae", null, windowFlags)) {
@@ -179,7 +179,7 @@ private:
             //igPushStyleColor_Vec4(ImGuiCol_Button, ImVec4(1,1,0,1));
             //igPushStyleColor_Vec4(ImGuiCol_ButtonActive, ImVec4(1,1,1,1));
 
-            if(igButtonEx("Sand".ptr, ImVec2(60, 30), ImGuiButtonFlags_Repeat)) {
+            if(igButtonEx("Sand".ptr, ImVec2(60, 30), ImGuiItemFlags_ButtonRepeat)) {
                 editType = CellType.SAND;
             }
             //igPopStyleColor(numStyleColors);
