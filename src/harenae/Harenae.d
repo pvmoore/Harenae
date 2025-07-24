@@ -89,7 +89,7 @@ public:
         vk.mainLoop();
     }
     @Implements("IVulkanApplication")
-    override void deviceReady(VkDevice device, PerFrameResource[] frameResources) {
+    override void deviceReady(VkDevice device) {
         this.log("deviceReady");
         this.device = device;
         this.windowSize = vk.windowSize;
